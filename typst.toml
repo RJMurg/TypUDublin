@@ -1,0 +1,16 @@
+[package]
+name = "typudublin"
+version = "0.1.0"
+compiler = "0.13.1"
+entrypoint = "src/typudublin.typ"
+authors = ["Ruán Murgatroyd <https://github.com/rjmurg>"]
+keywords = ["thesis", "report"]
+categories = ["report", "thesis"]
+license = "MIT"
+description = "Typxidian modified to be closer to the TU Dublin thesis format."
+repository = "https://github.com/rjmurg/typudublin"
+
+[template]
+path = "src/template/"
+entrypoint = "main.typ"
+thumbnail = "src/figures/thumbnail.png"
