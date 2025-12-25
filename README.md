@@ -26,7 +26,7 @@ Figures can automatically handle tables and images, and these will be automatica
   kind: image,
   caption: "A Hello World program in Python."
 )
-``
+```
 
 
 ## Requirements
