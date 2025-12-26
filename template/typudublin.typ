@@ -378,24 +378,31 @@
 
   doc
 
+  set page(numbering: "a", header: none)
+  counter(page).update(1)
+
   // BIBLIOGRAPHY
 
   show bibliography: set par(spacing: 1.2em)
 
   if type(bib) == content {
     bib
+    pagebreak()
   } else {
     bibliography(bib, title: bib-title)
+    pagebreak()
   }
 
   if after-content != none {
     after-content
+    pagebreak()
   }
 
   // Tables
   // dynamic LOF, LOT, LOD, displayed only if necessary
   let dynamic-list-off(title, kind) = context {
     if query(figure.where(kind: kind)).len() > 0 {
+      pagebreak()
       heading(title, level: 1, numbering: none)
       outline(title: none, indent: auto, target: figure.where(kind: kind))
     }
