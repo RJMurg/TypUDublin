@@ -139,7 +139,7 @@
     }
   }
 
-  // caption is aligned to center if its widht is smaller than text width, otherwise it is
+  // caption is aligned to center if its width is smaller than text width, otherwise it is
   // aligned to the left
   show figure.caption: it => context {
     v(0.25em)
@@ -198,7 +198,6 @@
   }
 
   if acknowledgments != none {
-    counter(page).update(n => n - 1)
     align(abstract-alignment, text(size: font-sizes.chapter, weight: "bold")[
       #heading(
         "Acknowledgments",
@@ -213,7 +212,6 @@
   }
 
   if show-declaration {
-    counter(page).update(n => n - 1)
     align(abstract-alignment, text(size: font-sizes.chapter, weight: "bold")[
       #heading(
         "Declaration",
@@ -225,15 +223,25 @@
 
     text(size: font-sizes.body)[
       I hereby declare that the work described in this dissertation is, except where otherwise stated, entirely my own work and has not been submitted as an exercise for a degree at this or any other university.
-      #linebreak()
-      #linebreak()
+      \
+      \
       Signed:
-      #linebreak()
+      \
       #v(2em)
-      #image(declaration-signature, width: 100pt)
-      #linebreak()
+
+      // I'm the goat lol
+      #table(
+        image(declaration-signature, width: 100pt),
+        stroke: (
+          bottom: 1pt + colors.secondary,
+          left: none,
+          right: none,
+          top: none,
+        )
+        )
+      \
       #authors.map(author => author.name).join(", ")
-      #linebreak()
+      \
       Date: #date.display("[day]/[month]/[year]")
     ]
     pagebreak()
@@ -244,7 +252,6 @@
   }
 
   if introduction != none {
-    counter(page).update(n => n - 1)
     align(abstract-alignment, text(size: font-sizes.chapter, weight: "bold")[
       #heading(
         "Introduction",
@@ -260,7 +267,6 @@
   show heading.where(level: 1): it => context {
     counter(figure).update(0)
     counter(math.equation).update(0)
-    pagebreak()
 
     let content = [#text(size: font-sizes.chapter)[#it]]
 
@@ -290,7 +296,7 @@
           #text(size: font-sizes.subsection, fill: chapter-color)[#upper(chapter-supplement) #(
               counter(heading).get().first()
             )]
-          #linebreak()
+          \
           #v(0.35em)
           #text(size: font-sizes.chapter)[#it.body]
         ])
