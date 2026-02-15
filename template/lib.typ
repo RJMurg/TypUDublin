@@ -20,7 +20,7 @@
   teal: rgb("847EBB"),
   purple: rgb("452A64"),
   blue: rgb("2C55A2"),
-  yellow: rgb("CFC600"),
+  yellow: rgb("E1E044"),
   green: rgb("2CAD6E"),
   grey: rgb("737373"),
   darkgrey: rgb("313131"),
@@ -44,6 +44,10 @@
     title: rgb("d64043"),
     bg: rgb("fbecee"),
   ),
+  table : (
+    header: rgb("FFFFFF"),
+    row-alt: rgb("C7F4E9"),
+  )
 )
 
 // math equation block that can be used to display non-numbered equations

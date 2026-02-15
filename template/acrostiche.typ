@@ -184,6 +184,7 @@
   let state-key = "acronym-state-" + acr
   acros.update(data => {
     let ndata = data
+    
     // Change both booleans to mark it used until reset AND in the overall document.
     ndata.at(acr).at(1) = true
     ndata.at(acr).at(2) = true
