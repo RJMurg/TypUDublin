@@ -1,14 +1,14 @@
 [package]
-name = "typxidian"
-version = "1.1.1"
+name = "typudublin"
+version = "1.0.0"
 compiler = "0.13.1"
-entrypoint = "src/typxidian.typ"
-authors = ["Angelo Nazzaro <https://github.com/angelonazzaro>"]
+entrypoint = "src/typudublin.typ"
+authors = ["Ruán Murgatroyd <https://github.com/rjmurg>"]
 keywords = ["thesis", "report"]
 categories = ["report", "thesis"]
 license = "MIT"
-description = "Modern note-taking, thesis and academic reports inspried by Obsidian and 'Alice in a Differentiable Wonderland'."
-repository = "https://github.com/angelonazzaro/typxidian"
+description = "A report and thesis template for TU Dublin, derived from Angelo Nazzaro's amazing 'TypXidian' template."
+repository = "https://github.com/rjmurg/TypUDublin"
 
 [template]
 path = "src/template/"
