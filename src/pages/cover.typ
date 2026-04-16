@@ -5,7 +5,8 @@
   subtitle: none,
   title-size: sizes.chapter,
   university: none,
-  academic-year: none,
+  date: datetime.today(),
+  course-code: none,
   course: none,
   department: none,
   supervisors: (),
@@ -49,13 +50,19 @@
   ])
 
   align(center, [
-    #text(weight: "bold", size: title-size)[#title]
+    #v(5em)
+    #text(weight: "black", size: title-size)[#title]
     #if subtitle != none {
       linebreak()
       v(1em)
       text(size: sizes.subsection)[#subtitle]
     }
-    #v(6em)
+
+    #if is-thesis {
+      text(size: sizes.subsubsection)[#thesis-type]
+    }
+
+    #v(5em)
 
     #if supervisors.len() == 0 and authors.len() > 0 {
       let ncols = calc.min(authors.len(), 3)
@@ -77,7 +84,7 @@
     }
     #if supervisors.len() > 0 and authors.len() > 0 {
       let supervisors-title = "SUPERVISOR"
-      let authors-title = "CANDIDATE"
+      let authors-title = "STUDENT"
 
       if authors.len() > 1 {
         authors-title += "S"
@@ -123,12 +130,26 @@
         )),
       )
     }
+
+    #v(10em)
+    #if course-code != none {
+      text(weight: "bold", size: sizes.section)[#course-code]
+      linebreak()
+    }
+
+    #if course != none {
+      text(weight: "bold", size: sizes.section)[#course]
+      linebreak()
+    }
   ])
 
-  if academic-year != none {
-    align(center + bottom, [
-      Academic year #academic-year
-    ])
-  }
-  pagebreak()
+  align(center + bottom, [
+    #department
+    #linebreak()
+    #university
+    #linebreak()
+    Date
+    #linebreak()
+    #date.display("[day]/[month]/[year]")
+  ])
 }
