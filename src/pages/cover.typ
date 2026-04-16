@@ -37,15 +37,6 @@
       numbering: none,
       caption: none,
     )
-    #strong(department)
-    #linebreak()
-    #strong(course)
-    #linebreak()
-    #strong(university)
-    #if is-thesis {
-      v(3em)
-      upper(thesis-type)
-    }
     #v(3em)
   ])
 
