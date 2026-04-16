@@ -16,16 +16,3 @@
   heading(level: 1, "Table of Contents", numbering: none, supplement: "toc")
   outline(depth: 3, indent: auto, title: none, target: heading)
 }
-
-// dynamic LOF, LOT, LOD, displayed only if necessary
-#let dynamic-list-off(title, kind) = context {
-  if query(figure.where(kind: kind)).len() > 0 {
-    heading(title, level: 1, numbering: none)
-    outline(title: none, indent: auto, target: figure.where(kind: kind))
-  }
-}
-
-#dynamic-list-off("List of Figures", image)
-#dynamic-list-off("List of Tables", table)
-#dynamic-list-off("List of Definitions", "definition")
-#dynamic-list-off("List of Theorems", "theorem")
