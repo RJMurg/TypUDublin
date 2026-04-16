@@ -1,5 +1,4 @@
-// #import "@preview/typudublin:1.0.0": *
-#import "../typudublin.typ": *
+#import "@preview/typudublin:1.0.0": *
 #import "abbreviations.typ": abbreviations
 
 #show: template.with(
